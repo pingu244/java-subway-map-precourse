@@ -17,7 +17,7 @@ class LineController {
             return
     }
 
-    fun choiceFunction(choice: String, lineRepository: LineRepository) {
+    private fun choiceFunction(choice: String, lineRepository: LineRepository) {
         if (choice == "1")
             registerLine(lineRepository)
         if (choice == "2")

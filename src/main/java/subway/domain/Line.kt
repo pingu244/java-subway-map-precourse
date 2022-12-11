@@ -11,9 +11,9 @@ class Line(val name: String) {
         section.add(sequence-1, station)
     }
 
-    fun deleteSection(station: Station, sequence: Int) {
+    fun deleteSection(station: Station) {
         if (section.size <= 2)
             throw IllegalArgumentException()
-        section.removeAt(sequence-1)
+        section.remove(station)
     }
 }

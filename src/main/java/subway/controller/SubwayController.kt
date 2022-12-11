@@ -51,7 +51,7 @@ class SubwayController {
             StationController().manageStation(stationRepository)
         if (choice == "2")
             LineController().manageLine(lineRepository)
+        if (choice == "3")
+            SectionController().manageSection(lineRepository)
     }
-
-
 }

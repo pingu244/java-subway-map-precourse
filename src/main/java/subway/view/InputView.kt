@@ -22,6 +22,10 @@ class InputView {
         return readLine().toString()
     }
 
+    fun readWhatSequence(): Int {
+        return readLine().toString().toInt()
+    }
+
     private fun catchException(validate: () -> Unit): Boolean {
         try {
             validate()
