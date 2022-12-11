@@ -1,15 +1,19 @@
-package subway.domain;
+package subway.domain
 
-public class Line {
-    private String name;
+class Line(val name: String) {
+    val section = mutableListOf<Station>()
 
-    public Line(String name) {
-        this.name = name;
+    fun createLine(startStation: Station, endStation: Station) {
+        section.add(startStation)
+        section.add(endStation)
+    }
+    fun addSection(station: Station, sequence: Int) {
+        section.add(sequence-1, station)
     }
 
-    public String getName() {
-        return name;
+    fun deleteSection(station: Station, sequence: Int) {
+        if (section.size <= 2)
+            throw IllegalArgumentException()
+        section.removeAt(sequence-1)
     }
-
-    // 추가 기능 구현
 }

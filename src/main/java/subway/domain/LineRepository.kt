@@ -1,22 +1,18 @@
-package subway.domain;
+package subway.domain
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.*
 
-public class LineRepository {
-    private static final List<Line> lines = new ArrayList<>();
-
-    public static List<Line> lines() {
-        return Collections.unmodifiableList(lines);
+class LineRepository {
+    private val lines: MutableList<Line> = ArrayList()
+    fun lines(): List<Line> {
+        return Collections.unmodifiableList(lines)
     }
 
-    public static void addLine(Line line) {
-        lines.add(line);
+    fun addLine(line: Line) {
+        lines.add(line)
     }
 
-    public static boolean deleteLineByName(String name) {
-        return lines.removeIf(line -> Objects.equals(line.getName(), name));
+    fun deleteLineByName(name: String?): Boolean {
+        return lines.removeIf { line: Line -> line.name == name }
     }
 }
