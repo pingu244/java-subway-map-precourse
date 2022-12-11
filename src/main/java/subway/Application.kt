@@ -1,10 +1,8 @@
-package subway;
+package subway
 
-import java.util.Scanner;
+import java.util.*
 
-public class Application {
-    public static void main(String[] args) {
-        final Scanner scanner = new Scanner(System.in);
-        // TODO: 프로그램 구현
-    }
+fun main() {
+    val scanner = Scanner(System.`in`)
+    // TODO: 프로그램 구현
 }
