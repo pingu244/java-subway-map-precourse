@@ -17,9 +17,7 @@ class StationController {
             return
     }
 
-
-
-    fun choiceFunction(choice: String, stationRepository: StationRepository) {
+    private fun choiceFunction(choice: String, stationRepository: StationRepository) {
         if (choice == "1")
             registerStation(stationRepository)
         if (choice == "2")
@@ -28,22 +26,22 @@ class StationController {
             showStation(stationRepository)
     }
 
-    fun registerStation(stationRepository: StationRepository) {
+    private fun registerStation(stationRepository: StationRepository) {
         OutputView().printSystem(INSERT_STAION_NAME)
         val station = Station(InputView().readStationName())
         stationRepository.addStation(station)
         OutputView().printInfoMessage(SUCCESS_REGISTER_STATION)
     }
 
-    fun deleteStation(stationRepository: StationRepository) {
+    private fun deleteStation(stationRepository: StationRepository) {
         OutputView().printSystem(INSERT_DELETE_STAION_NAME)
         val station = InputView().readStationName()
         if (stationRepository.deleteStation(station))
             OutputView().printInfoMessage(SUCCESS_DELETE_STATION)
     }
 
-    fun showStation(stationRepository: StationRepository) {
-        OutputView().printSystem(INSERT_DELETE_STAION_NAME)
+    private fun showStation(stationRepository: StationRepository) {
+        OutputView().printSystem(SHOW_STATION)
         for (station in stationRepository.stations())
             OutputView().printInfoMessage(station.name)
     }

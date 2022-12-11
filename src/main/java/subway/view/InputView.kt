@@ -18,6 +18,10 @@ class InputView {
         }
     }
 
+    fun readLineName(): String {
+        return readLine().toString()
+    }
+
     private fun catchException(validate: () -> Unit): Boolean {
         try {
             validate()
