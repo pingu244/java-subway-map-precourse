@@ -48,7 +48,7 @@ class SubwayController {
 
     private fun choiceFunction(choice: String) {
         if (choice == "1")
-            StationController().manageStation()
+            StationController().manageStation(stationRepository)
     }
 
 

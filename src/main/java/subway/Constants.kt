@@ -14,7 +14,10 @@ const val STATION_MENU = "역 관리 화면\n" +
         "B. 돌아가기\n"
 
 const val INSERT_STAION_NAME = "등록할 역 이름을 입력하세요."
-const val SUCCESS_REGISTER_STATION = "지하철 역이 등록되었습니다."
+const val INSERT_DELETE_STAION_NAME = "삭제할 역 이름을 입력하세요."
+const val SUCCESS_REGISTER_STATION = "지하철 역이 등록되었습니다.\n"
+const val SUCCESS_DELETE_STATION = "지하철 역이 삭제되었습니다.\n"
+const val SHOW_STATION = "역 목록"
 
 
 const val ERROR_STATION_NAME = "지하철 역 이름은 2글자 이상이어야 한다."
