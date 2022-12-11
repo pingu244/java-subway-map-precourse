@@ -21,7 +21,7 @@ class SectionController {
         if (choice == "1")
             registerSection(lineRepository)
         if (choice == "2")
-            deleteSection(lineRepository)
+            deleteSectionAsk(lineRepository)
     }
 
     private fun registerSection(lineRepository: LineRepository) {
@@ -29,22 +29,30 @@ class SectionController {
         val lineName = Line(InputView().readLineName())
         OutputView().printSystem(INSERT_STATION_FOR_SECTION)
         val station = Station(InputView().readStationName())
+        addSection(lineName, station, lineRepository.lines())
+    }
+
+    private fun addSection(lineName: Line, station: Station, lines: List<Line>) {
         OutputView().printSystem(INSERT_WHAT_SEQUENCE)
         val sequence = InputView().readWhatSequence()
-        val lines = lineRepository.lines()
-        val line = lines[lines.indexOf(lineName)]
-        line.addSection(station, sequence)
+//        val line = lines[lines.indexOf(lineName)]
+        val line = lines.find { line -> line == lineName }
+        line?.addSection(station, sequence)
         OutputView().printInfoMessage(SUCCESS_REGISTER_SECTION)
     }
 
-    private fun deleteSection(lineRepository: LineRepository) {
+    private fun deleteSectionAsk(lineRepository: LineRepository) {
         OutputView().printSystem(INSERT_DELETE_SECTION_LINE)
         val lineName = Line(InputView().readLineName())
         OutputView().printSystem(INSERT_DELETE_SECTION_STATION)
         val station = Station(InputView().readStationName())
-        val lines = lineRepository.lines()
-        val line = lines[lines.indexOf(lineName)]
-        line.deleteSection(station)
+        deleteSection(lineName, station, lineRepository.lines())
+    }
+
+    private fun deleteSection(lineName: Line, station: Station, lines: List<Line>) {
+//        val line = lines[lines.indexOf(lineName)]
+        val line = lines.find { line -> line == lineName }
+        line?.deleteSection(station)
         OutputView().printInfoMessage(SUCCESS_DELETE_SECTION)
     }
 }
