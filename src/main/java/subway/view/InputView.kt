@@ -2,7 +2,6 @@ package subway.view
 
 import subway.ENTER_AGAIN
 import subway.Validator
-import java.io.Console
 import java.lang.IllegalArgumentException
 
 class InputView {

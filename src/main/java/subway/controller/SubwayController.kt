@@ -10,12 +10,11 @@ import subway.view.InputView
 import subway.view.OutputView
 
 class SubwayController {
-    val stationRepository = StationRepository()
-    val lineRepository = LineRepository()
+    private val stationRepository = StationRepository()
+    private val lineRepository = LineRepository()
 
     fun start() {
         initialize()
-
         while (true) {
             OutputView().printSystem(MAIN_MENU)
             OutputView().printSystem(CHOOSE_MENU)
@@ -53,5 +52,7 @@ class SubwayController {
             LineController().manageLine(lineRepository)
         if (choice == "3")
             SectionController().manageSection(lineRepository)
+        if (choice == "4")
+            OutputView().printSubwayMap(lineRepository)
     }
 }

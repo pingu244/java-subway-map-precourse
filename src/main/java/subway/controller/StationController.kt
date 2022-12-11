@@ -1,7 +1,6 @@
 package subway.controller
 
 import subway.*
-import subway.domain.LineRepository
 import subway.domain.Station
 import subway.domain.StationRepository
 import subway.view.InputView
@@ -27,14 +26,14 @@ class StationController {
     }
 
     private fun registerStation(stationRepository: StationRepository) {
-        OutputView().printSystem(INSERT_STAION_NAME)
+        OutputView().printSystem(INSERT_STATION_NAME)
         val station = Station(InputView().readStationName())
         stationRepository.addStation(station)
         OutputView().printInfoMessage(SUCCESS_REGISTER_STATION)
     }
 
     private fun deleteStation(stationRepository: StationRepository) {
-        OutputView().printSystem(INSERT_DELETE_STAION_NAME)
+        OutputView().printSystem(INSERT_DELETE_STATION_NAME)
         val station = InputView().readStationName()
         if (stationRepository.deleteStation(station))
             OutputView().printInfoMessage(SUCCESS_DELETE_STATION)

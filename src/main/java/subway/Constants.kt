@@ -22,10 +22,10 @@ const val SECTION_MENU = "구간 관리 화면\n" +
         "2. 구간 삭제\n" +
         "B. 돌아가기\n"
 
-const val INSERT_STAION_NAME = "등록할 역 이름을 입력하세요."
-const val INSERT_DELETE_STAION_NAME = "삭제할 역 이름을 입력하세요."
-const val SUCCESS_REGISTER_STATION = "지하철 역이 등록되었습니다.\n"
-const val SUCCESS_DELETE_STATION = "지하철 역이 삭제되었습니다.\n"
+const val INSERT_STATION_NAME = "등록할 역 이름을 입력하세요."
+const val INSERT_DELETE_STATION_NAME = "삭제할 역 이름을 입력하세요."
+const val SUCCESS_REGISTER_STATION = "지하철 역이 등록되었습니다."
+const val SUCCESS_DELETE_STATION = "지하철 역이 삭제되었습니다."
 const val SHOW_STATION = "역 목록"
 
 const val INSERT_LINE_NAME = "등록할 노선 이름을 입력하세요."
@@ -44,6 +44,8 @@ const val INSERT_DELETE_SECTION_LINE = "삭제할 구간의 노선을 입력하�
 const val INSERT_DELETE_SECTION_STATION = "삭제할 구간의 역을 입력하세요."
 const val SUCCESS_DELETE_SECTION = "구간이 삭제되었습니다."
 
+const val SUBWAY_MAP = "지하철 노선도"
+const val DOTTED_LINE = "---"
 
 const val ERROR_STATION_NAME = "지하철 역 이름은 2글자 이상이어야 한다."
 const val ENTER_AGAIN = "다시 입력하세요."

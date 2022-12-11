@@ -1,19 +1,25 @@
 package subway.domain
 
+import java.util.*
+
 class Line(val name: String) {
-    val section = mutableListOf<Station>()
+    private val sections = mutableListOf<Station>()
+
+    fun sections(): List<Station> {
+        return Collections.unmodifiableList(sections)
+    }
 
     fun createLine(startStation: Station, endStation: Station) {
-        section.add(startStation)
-        section.add(endStation)
+        sections.add(startStation)
+        sections.add(endStation)
     }
     fun addSection(station: Station, sequence: Int) {
-        section.add(sequence-1, station)
+        sections.add(sequence-1, station)
     }
 
     fun deleteSection(station: Station) {
-        if (section.size <= 2)
+        if (sections.size <= 2)
             throw IllegalArgumentException()
-        section.remove(station)
+        sections.remove(station)
     }
 }
